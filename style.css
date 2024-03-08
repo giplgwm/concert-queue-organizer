@@ -1,0 +1,672 @@
+:root {
+  --done-bg-color: forestgreen;
+  --done-hover-bg-color: darkgreen;
+}
+
+body {
+  background-color: white;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#areas {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 9em;
+}
+
+.category {
+  flex: 1;
+  min-width: 18%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.category h4 {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.job {
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  cursor: grab;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.job:hover {
+  background-color: #b3b3b3
+}
+
+.done {
+  background-color: var(--done-bg-color);
+}
+
+.done:hover {
+  background-color: var(--done-hover-bg-color);
+}
+
+.dragbox {
+  border: 1px solid black;
+  border-radius: 10px;
+  min-height: 25px;
+  overflow-y: hidden;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .job {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+.dark-mode .job:hover {
+  background-color: #444;
+}
+
+.dark-mode .done {
+  background-color: var(--done-hover-bg-color);
+}
+
+.dark-mode .done:hover {
+  background-color: var(--done-bg-color);
+}
+
+.dark-mode button {
+  background-color: #999;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+#job-dialog {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  text-align: justify;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+#job-dialog #note {
+  margin-bottom: 3em;
+}
+
+.dark-mode #job-dialog {
+  background-color: #333;
+  color: white;
+  border: 1px solid #999;
+}
+
+#job-dialog button {
+  margin-top: 1em;
+}
+
+#job-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20vw;
+}
+
+#job-dialog details>* {
+  width: 100%;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 5px;
+  text-align: center;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.dark-mode #footer {
+  background-color: #222;
+  box-shadow: 0 -2px 5px 0 rgba(255, 255, 255, 0.1);
+}
+
+button {
+  cursor: pointer;
+}
+
+#jobeditdialog {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  text-align: justify;
+  overflow: hidden;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#jobeditdialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20vw;
+}
+
+#jobeditdialog form #note {
+  margin-bottom: 3em;
+}
+
+.dark-mode #jobeditdialog {
+  background-color: #333;
+  color: white;
+  border: 1px solid #999;
+}
+
+#jobnotesdialog {
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  text-align: justify;
+  overflow: hidden;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.dark-mode #jobnotesdialog {
+  background-color: #333;
+  color: white;
+  border: 1px solid #999;
+}
+
+#contextmenudialog {
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 12;
+  text-align: justify;
+  overflow: hidden;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.dark-mode #contextmenudialog {
+  background-color: #333;
+  color: white;
+  border: 1px solid #999;
+}
+
+#contextmenucontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+
+.info-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  z-index: 1000;
+}
+
+.info-btn .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #2d2d30;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -300px;
+}
+
+.info-btn svg {
+  transition: stroke 0.3s;
+}
+
+.info-btn:hover svg {
+  stroke: black;
+}
+
+.dark-mode .info-btn svg {
+  stroke: grey;
+}
+
+.dark-mode .info-btn:hover svg {
+  stroke: lightgrey;
+}
+
+.info-btn:hover .tooltiptext {
+  visibility: visible;
+}
+
+#footerflexcontainer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+#copybuttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1 1 10%;
+}
+
+.fade-in-up {
+  opacity: 0;
+  /* Initialize the opacity */
+  transform: translateY(20px);
+  /* Start position */
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#importqdialog {
+  position: absolute;
+  top: 10%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  text-align: justify;
+  overflow: hidden;
+  min-width: 30vw;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#importqdialog textarea {
+  width: 100%;
+}
+
+#importdialogbuttons {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+#importdialogbuttons>* {
+  flex: 1 1 0;
+}
+
+.dark-mode #importqdialog {
+  background-color: #333;
+  color: white;
+  border: 1px solid #999;
+}
+
+#importqBtn {
+  flex: 1 1 20%;
+  background: #007bff;
+  /* A pleasant shade of blue */
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#importqBtn:hover {
+  background: #0056b3;
+  /* A darker shade for hover */
+  border-color: #004085;
+}
+
+#clearqBtn {
+  flex: 1 1 10%;
+  background: #dc3545;
+  /* A softer shade of red */
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#clearqBtn:hover {
+  background: #bd2130;
+  /* Darker shade for hover */
+  border-color: #b21f2d;
+}
+
+#newjobBtn {
+  flex: 1 1 20%;
+  background: #28a745;
+  /* A more vibrant green */
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  margin-right: 10px;
+}
+
+#newjobBtn:hover {
+  background: #218838;
+  /* Darker green for hover */
+  border-color: #1e7e34;
+}
+
+#configBtn {
+  position: absolute;
+  top: 1em;
+  right: 4em;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#configBtn svg {
+  transition: stroke 0.3s;
+}
+
+#configBtn:hover svg {
+  stroke: black;
+}
+
+.dark-mode #configBtn svg {
+  stroke: grey;
+}
+
+.dark-mode #configBtn:hover svg {
+  stroke: lightgray;
+}
+
+#darkmodeBtn {
+  position: absolute;
+  top: 1em;
+  right: 7em;
+  cursor: pointer;
+}
+
+#darkmodeBtn svg {
+  transition: stroke 0.3s;
+}
+
+#darkmodeBtn:hover svg {
+  stroke: black;
+}
+
+.dark-mode #darkmodeBtn svg {
+  stroke: grey;
+}
+
+.dark-mode #darkmodeBtn:hover svg {
+  stroke: lightgrey;
+}
+
+#footerflexcontainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.trashbox {
+  text-align: center;
+  border: 2px dashed #c50000;
+  flex: 1 1 20%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.trashbox:hover {
+  border-style: solid;
+  background-color: #ffe5e5;
+  /* Light red background on hover */
+}
+
+#copybuttons button {
+  background-color: #007bff;
+  /* Blue background */
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 5px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+#copybuttons button:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.dark-mode .trashbox {
+  color: burlywood;
+  border-color: burlywood;
+}
+
+.dark-mode .trashbox:hover {
+  background-color: #3e2c2c;
+  /* Dark brown background on hover in dark mode */
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+#copiedText {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  /* A green background to signify success */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s, visibility 0.3s, bottom 0.3s;
+}
+
+#copyImgBtn {
+  position: absolute;
+  top: 1em;
+  right: 10em;
+  cursor: pointer;
+}
+
+#copyImgBtn svg {
+  transition: stroke 0.3s;
+}
+
+#copyImgBtn:hover svg {
+  stroke: black;
+}
+
+.dark-mode #copyImgBtn svg {
+  stroke: grey;
+}
+
+.dark-mode #copyImgBtn:hover svg {
+  stroke: lightgrey;
+}
+
+.tooltip-container .tooltiptext {
+  visibility: hidden;
+  background-color: #2d2d30;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  margin-left: -50px;
+  padding: 0.5em;
+}
+
+.tooltip-container:hover .tooltiptext {
+  visibility: visible;
+}
+
+.scrollable-element {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+}
+
+.scrollable-element::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera */
+}
+
+#bugreportBtn {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  cursor: pointer;
+}
+
+#bugreportBtn svg {
+  transition: stroke 0.3s;
+}
+
+#bugreportBtn:hover svg {
+  stroke: black;
+}
+
+.dark-mode #bugreportBtn svg {
+  stroke: grey;
+}
+
+.dark-mode #bugreportBtn:hover svg {
+  stroke: lightgrey;
+}
+
+#reportdialog {
+  z-index: 99999;
+  position: absolute;
+  background: white;
+  top: 1em;
+}
+
+.dark-mode #reportdialog {
+  background: #333;
+}
+
+#reportcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#closereportbtn {
+  cursor: pointer;
+  font-size: 1.5em;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.25em 0.5em;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  align-self: flex-start;
+}
+
+.side-tray {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* enable vertical scrolling */
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For Internet Explorer and Edge */
+  transition: 0.5s left, 0.3s background;
+  z-index: 1;
+}
+
+.side-tray .dragbox {
+  border: none;
+  min-height: 60vh;
+}
+
+.side-tray::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Opera */
+}
+
+.dark-mode .side-tray {
+  background: #222;
+  color: white;
+}
+
+/* Toggle the tray */
+.side-tray.open {
+  left: 0;
+}
+
+#schedJobBtn {
+  position: fixed;
+  left: 0px;
+  top: 45vh;
+  transition: 0.5s left;
+  cursor: pointer;
+}
+
+#schedJobBtn svg {
+  transition: stroke 0.3s;
+}
+
+#schedJobBtn:hover svg {
+  stroke: black;
+}
+
+.dark-mode #schedJobBtn svg {
+  stroke: grey;
+}
+
+.dark-mode #schedJobBtn:hover svg {
+  stroke: lightgrey;
+}
+
+#Scheduled {
+  margin-bottom: 9em;
+}
+
+.reverse-arrow {
+  transform: rotate(180deg);
+}
