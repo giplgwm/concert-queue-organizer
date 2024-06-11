@@ -1,0 +1,54 @@
+
+Job SearchExpand
+Find a job
+JobID	
+Lecid	
+Site ID	
+Customer order number	
+Account Name	
+Site Name	
+ID1	
+Address	
+ID2	
+City	
+ID3	
+State	
+...
+ID4	
+Zip Code	
+Job date:    Between	
+ 
+Assigned to me		And	
+ 
+Condition	
+And	Or
+Due Date Scheduled Date Completion Date 
+Number of jobs: 20
+Note: Double click on a row will load job to tabs
+Job#	Account	CN#	SiteID	Sched.Date&Time 	Due Date	Cust# Last Update	CUD#	Pf	City	State	Status	EQ	 
+	
+	 	 	
+	
+	 	 	 	
+	
+	 	 	 
+111123	Allen - TPS - Site Survey/Install	EO220437675	HON_LHUEHIAH_SVY_STA_KAUI_HI	 	12/29/2023	Order - To Proceed with Site Survey...	05/31/24 08:49 AM	JMosley	Lihue	HI	Open	N	
+111124	Allen - TPS - Site Survey/Install	EO220444602	STL_MRDSILAP_SVY_R21_MERDOSIA_IL	 	04/30/2024	Order - To Revisit	03/21/24 14:02 PM	JMosley	Meredosia	IL	Open	N	
+111125	Allen - TPS - Site Survey/Install	EO240683798	HYR005A	 	05/31/2024	Issue - Pending LEC information ...	04/18/24 17:06 PM	JMosley	Sneads Ferry	NC	Open	N	
+111126	Allen - TPS - Site Survey/Install	EO240684543	ARP005A	 	06/21/2024	Order - To Proceed with Site Survey...	06/06/24 17:00 PM	JMosley	Aransas Pass	TX	Open	N	
+111127	Allen - TPS - Site Survey/Install	EO240684797	NKM005A	 	05/31/2024	Issue - Need new LEC Contact	05/28/24 10:47 AM	JMosley	Nokomis	FL	Open	N	
+111128	Allen - TPS - Site Survey/Install	EO240684873	SRK005A	 	05/31/2024	Order - To Proceed with Site Survey...	06/07/24 12:41 PM	JMosley	Sturgis	KY	Open	N	
+111129	Allen - TPS - Site Survey/Install	BOS_SVY_ISW_VTS-R_NEW_YORK_FRESHKILLS_PAWSS	VTS FRESH KILLS	 	05/03/2024	Issue - LEC Contact advised order...	04/29/24 16:02 PM	JMosley	Staten Island	NY	Open	N	
+111130	Allen – TPS – TP	None	S570	 	05/10/2024	Status: COI submitted to POC Karmi...	06/06/24 15:17 PM	JMosley	Alcoa	TN	Open	Y	
+111131	Allen - TPS - Site Survey/Install	EO220441734	POR_CPCHVA04_SVY_R21_CAPECHARLES_VA	05/29/2024 9:00 AM EDT	05/24/2024	Completed - Site Survey	05/29/24 09:32 AM	JMosley	Cape Charles	VA	Open	N	
+111132	Vick - TPS/ VRP	213882455	213882455	05/29/2024 10:00 AM EDT	01/18/2024	Completed - Site Survey	05/29/24 12:14 PM	JMosley	WASHINGTON	DC	Open	N	
+111133	Vick - TPS/VGT	214762105	 	06/05/2024 8:30 AM PDT	05/11/2024	Completed - Extend and Test	06/05/24 16:47 PM	JMosley	PORTLAND	OR	Open	N	
+111134	Vick - TPS/VGT	215051407	 	06/05/2024 1:00 PM EDT	06/17/2024	Completed - Site Survey	06/05/24 14:25 PM	JMosley	WASHINGTON	DC	Open	Y	
+111135	Allen - pmio - UCB - DCN	USCANCAK01D	USCANCAK01D	06/10/2024 10:00 AM AKDT	05/13/2024	Completed -	06/10/24 16:00 PM	JMosley	Anchorage	AK	Open	Y	
+111136	Allen - TPS - Starbucks BTI Survey	IP23111503	IP23111503	06/11/2024 8:00 AM PDT	06/06/2024	Scheduled Revisit - Date : 6/11/...	06/10/24 17:51 PM	JMosley	Quinault	WA	Open	N	
+111137	Allen - TPS - Site Survey/Install	EO220441836	MIA_HBSDFLAD_SVY_R21_HOBESOUND_FL	06/11/2024 10:00 AM EDT	06/07/2024	Scheduled To Site Survey Date : ...	05/31/24 12:50 PM	JMosley	Hobe Sound	FL	Open	N	
+111138	Allen - TPS - Site Survey/Install	EO220444754	ALA_OCSDCAXM_SVY_R21_SANONOFREPEAK_CA	06/11/2024 10:00 AM PDT	06/07/2024	Scheduled To Site Survey Date : ...	05/31/24 11:30 AM	JMosley	Camp Pendleton	CA	Open	Y	
+111139	Allen - TPS - Starbucks BTI Survey	IP24022135	IP24022135	06/18/2024 9:00 AM PDT	05/17/2024	Scheduled Revisit - Date : 6/18/...	06/05/24 15:53 PM	JMosley	Mt Baldy	CA	Open	Y	
+111140	Mario	8497462	8497462	06/20/2024 8:00 AM EDT	05/23/2024	Scheduled To - Extend/Test/Install ...	05/20/24 16:34 PM	JMosley	Atlanta	GA	Open	N	
+111141	Sonic	3753364	 	07/08/2024 8:30 AM EDT	07/08/2024	Scheduled To - Install Equipment ...	06/05/24 13:03 PM	JMosley	Milledgeville	GA	Open	N	
+111142	Sonic	3753233	 	07/08/2024 12:30 PM EDT	07/08/2024	Scheduled To - Install Equipment ...	06/05/24 13:05 PM	JMosley	Milledgeville	GA	Open	N	
