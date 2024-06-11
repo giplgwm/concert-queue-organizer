@@ -2,7 +2,9 @@
 A dashboard for viewing data from the official company portal in a more viewable format. Data is saved in the user's browser to persist between visits. 
 
 ## Demo
-[Here](https://qsorter.replit.app/) If you'd like to see how it works, simply copy/paste the data from `Sample_Data.txt` into the Import box on the demo.
+[Here](https://qsorter.replit.app/) 
+
+If you'd like to see how it works, simply copy/paste the data from `Sample_Data.txt` into the Import box on the demo.
 
 ## Features
 - Organizes data into 4 columns, to streamline the view into only things that are relavent to today's work schedule.
