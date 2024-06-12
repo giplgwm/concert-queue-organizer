@@ -1,10 +1,7 @@
 # Concert Queue Organizer
 A dashboard for viewing data from the official company portal in a more viewable format. Data is saved in the user's browser to persist between visits. 
 
-## Demo
-[Here](https://qsorter.replit.app/) 
-
-If you'd like to see how it works, simply copy/paste the data from [Sample_Data.txt](https://github.com/giplgwm/concert-queue-organizer/blob/main/Sample_Data.txt) into the Import box on the demo. 
+If you'd like to see how it works, simply copy/paste the entire text from [Sample_Data.txt](https://github.com/giplgwm/concert-queue-organizer/blob/main/Sample_Data.txt) into the Import box on the [Demo](https://qsorter.replit.app/)
 
 ## Features
 - Organizes data into 4 columns, to streamline the view into only things that are relevant to today's work schedule.
